@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lover's Retreat - Your Cozy Escape Awaits</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Lover's Retreat</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#booking" class="nav-link">Book Now</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 data-aos="fade-up" data-aos-delay="200">Welcome to Lover's Retreat</h1>
+            <p data-aos="fade-up" data-aos-delay="400">Your Cozy Escape Awaits</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <button class="btn-primary" onclick="scrollToSection('booking')">
+                    Book Your Cozy Room Now
+                </button>
+                <button class="btn-secondary" onclick="scrollToSection('pricing')">
+                    See Pricing
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Your Perfect Escape, Anytime</h2>
+                <p>A cozy and intimate space designed for couples to relax and enjoy quality time together. Perfect for college students seeking a private, comfortable space with flexible hourly rentals.</p>
+            </div>
+            <div class="features-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Maggie & Cards</h3>
+                    <p>Cozy up with delicious Maggie and enjoy fun card games together</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Amazon Prime Access</h3>
+                    <p>Watch your favorite shows and movies on our premium streaming service</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Unmarried Couples Welcome</h3>
+                    <p>No judgment, just relaxation in a private, comfortable space</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Choose Your Perfect Stay</h2>
+                <p>Flexible rental options to suit your needs</p>
+            </div>
+            <div class="pricing-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Quick Escape</h3>
+                        <div class="price">₹800</div>
+                        <div class="duration">1 Hour</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Cozy private space</li>
+                        <li><i class="fas fa-check"></i> Amazon Prime access</li>
+                        <li><i class="fas fa-check"></i> Maggie & cards included</li>
+                    </ul>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Sweet Time</h3>
+                        <div class="price">₹1,000</div>
+                        <div class="duration">3 Hours</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All basic amenities</li>
+                        <li><i class="fas fa-check"></i> Extended relaxation time</li>
+                        <li><i class="fas fa-check"></i> Perfect for movie dates</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Long Date</h3>
+                        <div class="price">₹1,500</div>
+                        <div class="duration">6 Hours</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Half-day retreat</li>
+                        <li><i class="fas fa-check"></i> All premium amenities</li>
+                        <li><i class="fas fa-check"></i> Maximum comfort</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Overnight Stay</h3>
+                        <div class="price">₹2,000</div>
+                        <div class="duration">Night Stay</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Full night experience</li>
+                        <li><i class="fas fa-check"></i> Complete privacy</li>
+                        <li><i class="fas fa-check"></i> Ultimate romantic getaway</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-cta" data-aos="fade-up" data-aos-delay="400">
+                <button class="btn-primary" onclick="openWhatsAppPopup()">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Features & Amenities -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What's Included in Your Stay</h2>
+            </div>
+            <div class="amenities-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-bowl-food"></i>
+                    </div>
+                    <h3>Maggie</h3>
+                    <p>The perfect companion for a cozy date</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fab fa-amazon"></i>
+                    </div>
+                    <h3>Amazon Prime Access</h3>
+                    <p>Stream movies and shows together</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-cards-blank"></i>
+                    </div>
+                    <h3>Cards</h3>
+                    <p>Play a few rounds or just relax</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Cozy Ambiance</h3>
+                    <p>Enjoy soft lighting and comfortable furnishings</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-shield-heart"></i>
+                    </div>
+                    <h3>Unmarried Couples Welcome</h3>
+                    <p>A safe, private space for all</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Free WiFi</h3>
+                    <p>Stay connected during your retreat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What Our Guests Say</h2>
+            </div>
+            <div class="testimonials-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"A perfect escape from the college grind. Loved the flexibility and cozy vibe!"</p>
+                    <div class="testimonial-author">
+                        <strong>Ananya & Raj</strong>
+                        <span>College Students</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Great place for a private, relaxing time with my partner. Definitely booking again!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sanya & Aman</strong>
+                        <span>College Students</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing ambiance and privacy. The best place for couples to spend quality time together."</p>
+                    <div class="testimonial-author">
+                        <strong>Priya & Arjun</strong>
+                        <span>College Students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-content" data-aos="fade-up">
+                <h2>Ready to Escape?</h2>
+                <p>To reserve your spot, click the button below to message us on WhatsApp.</p>
+                <button class="btn-primary btn-large" onclick="openWhatsAppPopup()">
+                    <i class="fab fa-whatsapp"></i>
+                    Message on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Have Questions?</h2>
+                <p>If you have any questions, feel free to reach out to us!</p>
+            </div>
+            <div class="contact-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Quick responses via WhatsApp</p>
+                        <button class="btn-secondary" onclick="openWhatsAppPopup()">Message Us</button>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>loversretreat@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Availability</h3>
+                        <p>24/7 Flexible Booking</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lover's Retreat</h3>
+                    <p>Your cozy escape awaits. Creating memorable moments for couples.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Payment Methods</h4>
+                    <p>Cash, UPI, Bank Transfer</p>
+                    <div class="payment-icons">
+                        <i class="fas fa-money-bill"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lover's Retreat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Popup -->
+    <div id="whatsappPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Book Your Stay</h3>
+                <button class="close-popup" onclick="closeWhatsAppPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="popup-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <p>You're one step away from booking! Click below to chat with us on WhatsApp.</p>
+            </div>
+            <div class="popup-footer">
+                <button class="btn-primary" onclick="redirectToWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    Open WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
