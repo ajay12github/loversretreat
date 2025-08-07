@@ -345,9 +345,9 @@
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" onclick="openInstagramPopup()"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" onclick="openWhatsAppPopup()"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -374,6 +374,28 @@
                 <button class="btn-primary" onclick="redirectToWhatsApp()">
                     <i class="fab fa-whatsapp"></i>
                     Open WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instagram Popup -->
+    <div id="instagramPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Follow Us on Instagram</h3>
+                <button class="close-popup" onclick="closeInstagramPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="popup-icon instagram-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <p>Follow us on Instagram for exclusive photos, updates, and special offers!</p>
+            </div>
+            <div class="popup-footer">
+                <button class="btn-primary instagram-btn" onclick="redirectToInstagram()">
+                    <i class="fab fa-instagram"></i>
+                    Follow on Instagram
                 </button>
             </div>
         </div>

@@ -87,11 +87,20 @@ function closeWhatsAppPopup() {
 
 // Close popup when clicking outside
 document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('whatsappPopup');
-    if (popup) {
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) {
+    const whatsappPopup = document.getElementById('whatsappPopup');
+    if (whatsappPopup) {
+        whatsappPopup.addEventListener('click', function(e) {
+            if (e.target === whatsappPopup) {
                 closeWhatsAppPopup();
+            }
+        });
+    }
+    
+    const instagramPopup = document.getElementById('instagramPopup');
+    if (instagramPopup) {
+        instagramPopup.addEventListener('click', function(e) {
+            if (e.target === instagramPopup) {
+                closeInstagramPopup();
             }
         });
     }
@@ -101,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeWhatsAppPopup();
+        closeInstagramPopup();
     }
 });
 
@@ -108,7 +118,7 @@ document.addEventListener('keydown', function(e) {
 function redirectToWhatsApp() {
     // Replace 'xxxxxxxxxx' with your actual WhatsApp number (with country code, without + symbol)
     // Example: For +91 9876543210, use 919876543210
-    const whatsappNumber = '7073364286'; // Replace with your WhatsApp number
+    const whatsappNumber = 'xxxxxxxxxx'; // Replace with your WhatsApp number
     const message = encodeURIComponent('Hi, I would like to book a room at Lover\'s Retreat. Could you please share the availability and confirm the booking?');
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
     
@@ -117,6 +127,36 @@ function redirectToWhatsApp() {
     
     // Close the popup
     closeWhatsAppPopup();
+}
+
+// Instagram Popup functionality
+function openInstagramPopup() {
+    const popup = document.getElementById('instagramPopup');
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeInstagramPopup() {
+    const popup = document.getElementById('instagramPopup');
+    if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+// Instagram redirect function
+function redirectToInstagram() {
+    // Replace 'your_instagram_username' with your actual Instagram username
+    const instagramUsername = 'loversretreat'; // Replace with your Instagram username
+    const instagramURL = `https://www.instagram.com/${instagramUsername}`;
+    
+    // Open Instagram in a new tab
+    window.open(instagramURL, '_blank');
+    
+    // Close the popup
+    closeInstagramPopup();
 }
 
 // Form submission handler
@@ -290,50 +330,68 @@ function scrollToTop() {
     });
 }
 
-// Add scroll to top button (optional)
+// Add WhatsApp floating button (replaces scroll to top)
 document.addEventListener('DOMContentLoaded', function() {
-    // Create scroll to top button
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    scrollTopBtn.className = 'scroll-top-btn';
-    scrollTopBtn.onclick = scrollToTop;
-    scrollTopBtn.style.cssText = `
+    // Create WhatsApp floating button
+    const whatsappBtn = document.createElement('button');
+    whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    whatsappBtn.className = 'whatsapp-float-btn';
+    whatsappBtn.onclick = openWhatsAppPopup;
+    whatsappBtn.style.cssText = `
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
-        background: var(--gradient-primary);
+        width: 60px;
+        height: 60px;
+        background: #25D366;
         border: none;
         border-radius: 50%;
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         cursor: pointer;
-        box-shadow: 0 4px 15px rgba(212, 166, 169, 0.3);
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 1000;
+        animation: pulse 2s infinite;
     `;
     
-    document.body.appendChild(scrollTopBtn);
+    // Add pulse animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+    `;
+    document.head.appendChild(style);
     
-    // Show/hide scroll to top button
+    document.body.appendChild(whatsappBtn);
+    
+    // Show/hide WhatsApp button
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
-            scrollTopBtn.style.opacity = '1';
-            scrollTopBtn.style.visibility = 'visible';
+            whatsappBtn.style.opacity = '1';
+            whatsappBtn.style.visibility = 'visible';
         } else {
-            scrollTopBtn.style.opacity = '0';
-            scrollTopBtn.style.visibility = 'hidden';
+            whatsappBtn.style.opacity = '0';
+            whatsappBtn.style.visibility = 'hidden';
         }
     });
     
-    scrollTopBtn.addEventListener('mouseenter', function() {
+    whatsappBtn.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-3px) scale(1.1)';
     });
     
-    scrollTopBtn.addEventListener('mouseleave', function() {
+    whatsappBtn.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
