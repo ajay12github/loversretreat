@@ -118,7 +118,7 @@ document.addEventListener('keydown', function(e) {
 function redirectToWhatsApp() {
     // Replace 'xxxxxxxxxx' with your actual WhatsApp number (with country code, without + symbol)
     // Example: For +91 9876543210, use 919876543210
-    const whatsappNumber = 'xxxxxxxxxx'; // Replace with your WhatsApp number
+    const whatsappNumber = '7073364286'; // Replace with your WhatsApp number
     const message = encodeURIComponent('Hi, I would like to book a room at Lover\'s Retreat. Could you please share the availability and confirm the booking?');
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
     
